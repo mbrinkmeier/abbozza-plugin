@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="testplugin">
+   <name>Test-Plugin</name>
+   <description>Dies ist ein einfaches Testplugin</description>
+   <options>
+      <group name="Irgendetwas">
+       	<item name="Erste Option" option="pluginoption" default="true"/>
+        <item name="Zweite Option" option="zeweite" default="true"/>
+     </group>
+   </options>
+   <monitor class="TestMonitor" prefix="test"/>
+   <handler class="Testplugin"/>
+   <js file="blocks.js"/>
+   <js file="testplugin.js"/>
+   <feature id="cat.TEST" option="testplugin.enabled">
+      <category name ="Hallo" id="cat.TESTPLUGIN">
+        <block type="test"/>
+      </category>
+   </feature>
+   <locales>
+       <language id="en">
+            <msg id="cat.TESTPLUGIN">Testplugin</msg>
+            <msg id="gui.test_monitor_title">Test Monitor</msg>
+            <msg id="blk.test">Some text:</msg>
+            <msg id="gui.testplugin_tool">Testplugin Tool</msg>
+       </language>
+       <language id="de">           
+            <msg id="cat.TESTPLUGIN">Testplugin</msg>
+            <msg id="gui.test_monitor_title">Test Monitor</msg>
+            <msg id="blk.task">Irgendein Text:</msg>
+            <msg id="gui.testplugin_tool">Testplugin Werkzeug</msg>
+       </language>
+   </locales>
+   <!-- requirements>
+       <library name="Adafruit NeoPixel"/>
+       <library name="Adafruit NeoMatrix"/>
+   </requirements -->
+</plugin>
