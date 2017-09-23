@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin id="testplugin">
+    
+   <!-- Display name of the plugin -->
    <name>Test-Plugin</name>
+   
+   <!-- A description of the plugin -->
    <description>Dies ist ein einfaches Testplugin</description>
+   
+   <!-- options used by the plugin -->
    <options>
       <group name="Irgendetwas">
        	<item name="Erste Option" option="pluginoption" default="true"/>
         <item name="Zweite Option" option="zeweite" default="true"/>
      </group>
    </options>
+   
+   <!-- A subclass of MonitorPanel used by the plugin-->
    <monitor class="TestMonitor" prefix="test"/>
+   
+   <!-- A subclass of PluginHandler, used by the plugin -->
    <handler class="Testplugin"/>
+   
+   <!-- Javascript files required by the plugin -->
    <js file="blocks.js"/>
    <js file="testplugin.js"/>
+   
+   <!-- Additions to the toolbox -->
    <feature id="cat.TEST" option="testplugin.enabled">
       <category name ="Hallo" id="cat.TESTPLUGIN">
         <block type="test"/>
       </category>
    </feature>
+   
+   <!-- locale entries -->
    <locales>
        <language id="en">
             <msg id="cat.TESTPLUGIN">Testplugin</msg>
@@ -27,10 +43,12 @@
        <language id="de">           
             <msg id="cat.TESTPLUGIN">Testplugin</msg>
             <msg id="gui.test_monitor_title">Test Monitor</msg>
-            <msg id="blk.task">Irgendein Text:</msg>
+            <msg id="blk.test">Irgendein Text:</msg>
             <msg id="gui.testplugin_tool">Testplugin Werkzeug</msg>
        </language>
    </locales>
+   
+   <!-- Required libraries -->
    <!-- requirements>
        <library name="Adafruit NeoPixel"/>
        <library name="Adafruit NeoMatrix"/>
