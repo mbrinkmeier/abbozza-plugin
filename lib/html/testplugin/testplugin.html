@@ -16,14 +16,81 @@ limitations under the License.
 -->
 <html>
     <head>
-        <title>Testplugin HTML content</title>
+        <title>Wie man ein abbozza! plugin erstellt</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            PRE.code {
+                border: 1pt solid black;
+                border-radius: 0.5em;
+                padding: 0.5em;
+                background-color: #f0f0f0;
+            }
+        </style>
     </head>
     <body>
-        <h1>Testplugin</h1>
+        <h1>Wie man ein abbozza! plugin erstellt</h1>
         <p>
-            This HTML-page is part of the abbozza! testplugin.
+            Diese Datei enthält eine kurze Anleitung, wie man ein abbozza!
+            Plugin erstellt.
         </p>
+        <h2>Wo gehören plugins hin?</h2>
+        <p>
+            Das Verzeichnis, in dem abbozza! Plugins hinterlegt werden hängt vom
+            jeweiligen System ab.
+        </p>
+        <h3>Arduino</h3>
+        <p>
+            Für den Arduino gibt es zwei mögliche Verzeichnise. Entweder im
+            Sketchbook-Ordner des jeweiligen Nutzers unter
+            <tt>&lt;user_sketchbook&gt;/tools/Abbozza/plugins</tt>
+            oder im Installations-Verzeichnis der Arduino IDE unter
+            <tt>/tools/Abbozza/plugins</tt>.
+        </p>
+        <h3>Andere Systeme</h3>
+        <p>
+           Für alle anderen Systme ist es entweder das Verzeichnis
+           <tt>&lt;home&gt;/.abbozza/&lt;system&gt;/plugins</tt>
+           oder <tt>&lt;abbozza_root&gt;/plugins</tt>. Dabei wurden die
+           folgenden Platzhalter verwendet:
+           <ul>
+               <li><tt>&lt;home&gt;</tt>: Das Heimatverzeichnis des Nutzers.</li>
+               <li><tt>&lt;system&gt;</tt>: Der Name des jeweiligen Systems,
+               z.B. <tt>calliopeC</tt>.</li>
+               <li><tt>&lt;abbozza_root&gt;</tt>: Das Verzeichnis in dem 
+               abbozza! installiert wurde.</li>
+           </ul>
+        </p>
+        <h2>Was man auf jeden Fall braucht</h2>
+        <p>
+            In dem jeweiligen Plugin-Verzeichnis muss ein Verzeichnis oder
+            eine Jar-Datei vorliegen, die alle notwendigen Dateien enthält.
+            Im Folgenden gehen wir von einer Verzeichnisstruktur aus. Wie man
+            die Jar-Datei erstellt, wird <a href="#jar">im Anschluss</a> beschrieben.
+        </p>
+        <p>
+            In dem Verzeichnis muss eine XML-Datein <tt>plugin.xml</tt> vorliegen,
+            die mindestens die folgenden Form haben muss:
+            <pre class="code">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;plugin id="testplugin"&gt;
+    &lt;!-- das Attribut id ist ein eindeutiger Identifier des Plugins --&gt;
+    
+   &lt;!-- Name des Plugins --&gt;
+   &lt;name&gt;Test-Plugin&lt;/name&gt;
+   
+   &lt;!-- Beschreibung des Plugins --&gt;
+   &lt;description&gt;Dies ist ein einfaches Testplugin&lt;/description&gt;
+&lt;/plugin&gt;</pre>            
+        </p>    
+        <h2>Neue Blöcke</h2>
+        <h2>Optionen für das Plugin</h2>
+        <h2>HTTP-Handler</h2>
+        <h2>Panel für den seriellen Monitor</h2>
+        <h2>Tool</h2>
+        <h2>Bibliotheken</h2>
+        <h2>Vorraussetzungen</h2>
+        <h2>Zusätzliche Inhalte</h2>
+        <h2><a id="jar"/>Wie man die Jar-Datei erstellt</h2>
     </body>
 </html>
