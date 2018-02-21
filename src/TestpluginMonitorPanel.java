@@ -1,11 +1,8 @@
 
-import de.uos.inf.did.abbozza.AbbozzaLocale;
-import de.uos.inf.did.abbozza.AbbozzaLogger;
-import de.uos.inf.did.abbozza.AbbozzaServer;
-import de.uos.inf.did.abbozza.monitor.MonitorPanel;
-import de.uos.inf.did.abbozza.plugin.Plugin;
-import de.uos.inf.did.abbozza.plugin.PluginHandler;
-import de.uos.inf.did.abbozza.plugin.PluginListener;
+import de.uos.inf.did.abbozza.core.AbbozzaLocale;
+import de.uos.inf.did.abbozza.core.AbbozzaLogger;
+import de.uos.inf.did.abbozza.monitor.MonitorListener;
+import de.uos.inf.did.abbozza.plugin.PluginMonitorPanel;
 import javax.swing.JPopupMenu;
 
 /*
@@ -28,24 +25,18 @@ import javax.swing.JPopupMenu;
  *
  * @author michael
  */
-public class TestMonitor extends MonitorPanel implements PluginListener {
+public class TestpluginMonitorPanel extends PluginMonitorPanel {
 
-    private static TestMonitor monitorPanel = null;
+    // private static TestpluginMonitorPanel monitorPanel = null;
     
     /**
      * Creates new form TestMonitor
      */
-    public TestMonitor() {
+    public TestpluginMonitorPanel() {
         AbbozzaLogger.info("TESTPLUGIN PANEL");
         initComponents();
      
-        Plugin plugin = AbbozzaServer.getPluginManager().getPlugin("testplugin");
-        PluginHandler handler;
-        if ( plugin != null ) { 
-            handler = plugin.getHttpHandler();
-            handler.addPluginListener(this);
-        }
-        monitorPanel = this;
+        // Plugin plugin = AbbozzaServer.getPluginManager().getPlugin("testplugin");
     }
 
     /**
@@ -96,18 +87,18 @@ public class TestMonitor extends MonitorPanel implements PluginListener {
         return AbbozzaLocale.entry("gui.test_monitor_title");
     }
     
-    public static TestMonitor getPanel() {
-        return monitorPanel;
-    }
+    // public static TestpluginMonitorPanel getPanel() {
+    //     return monitorPanel;
+    // }
     
     public void addText(String text) {
         String t = textPane.getText();
         textPane.setText(t + text + "\n");
     }
 
-    @Override
-    public void receivedMessage(String msg) {
-        AbbozzaLogger.info("testplugin : received '" + msg + "'");
-        processMessage(msg);
-    }
+    // @Override
+    // public void receivedMessage(String msg) {
+    //     AbbozzaLogger.info("testplugin : received '" + msg + "'");
+    //     processMessage(msg);
+    // }
 }

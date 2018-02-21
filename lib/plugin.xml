@@ -16,10 +16,11 @@
    </options>
    
    <!-- A subclass of MonitorPanel used by the plugin-->
-   <monitor class="TestMonitor" prefix="test"/>
+   <monitorpanel class="TestpluginMonitorPanel" prefix="testpanel"/>
+   <monitorlistener class="TestpluginMonitorListener" prefix="testlistener"/>
    
    <!-- A subclass of PluginHandler, used by the plugin -->
-   <handler class="Testplugin"/>
+   <handler class="TestpluginHandler"/>
    
    <!-- Javascript files required by the plugin -->
    <js file="blocks.js"/>

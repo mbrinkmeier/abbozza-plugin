@@ -25,17 +25,17 @@ import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import java.io.IOException;
 import de.uos.inf.did.abbozza.plugin.PluginHandler;
-import de.uos.inf.did.abbozza.AbbozzaServer;
-import de.uos.inf.did.abbozza.AbbozzaLogger;
+import de.uos.inf.did.abbozza.core.AbbozzaServer;
+import de.uos.inf.did.abbozza.core.AbbozzaLogger;
 import java.io.OutputStream;
 
 /**
  *
  * @author michael
  */
-public class Testplugin extends PluginHandler {
+public class TestpluginHandler extends PluginHandler {
 
-    public Testplugin() {
+    public TestpluginHandler() {
         AbbozzaLogger.out("Testplugin handler instanciated",AbbozzaLogger.INFO);
     }
 
@@ -45,7 +45,7 @@ public class Testplugin extends PluginHandler {
  
         String response = "testplugin answered";
         String query = exchg.getRequestURI().getQuery();
-        fireMessageReceived(query);
+        // fireMessageReceived(query);
         
         // String response = _plugin.getId();
        response = response + "\n" + AbbozzaServer.getInstance();
